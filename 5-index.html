@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-US" ng-app="directivas">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<title></title>
+	<script type="text/javascript">
+		var app = angular.module("directivas", []);
+		
+		app.controller("mainController", function($scope){
+			$scope.user  = {
+				name: "Pedro",
+				lastName: "Aznar",
+				role: "bass player"
+			};
+		});
+		
+		app.directive("testSimple", function(){
+			return {
+				templateUrl: "template3.tmpl",
+				restrict: "E"
+			}
+		});
+	</script>
+</head>
+<body ng-controller="mainController">
+	<test-simple />
+</body>
+</html>
